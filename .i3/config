@@ -171,5 +171,6 @@ bar {
     }
 }
 
+exec --no-startup-id compton --config ~/.config/compton.conf -b
 exec redshift -l 55.7:12.6 -t 2600:2600 -g 0.8 -m randr -v
 exec_always for id in $(xinput list | grep "pointer" | cut -d '=' -f 2 | cut -f 1); do xinput --set-prop $id 'libinput Accel Profile Enabled' 0, 1; done
