@@ -134,7 +134,6 @@ bindsym $mod+r mode "resize"
 
 
 
-exec --no-startup-id "compton -b"
 
 for_window [class="^.*"] border pixel 1
 
