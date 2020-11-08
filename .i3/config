@@ -1,14 +1,8 @@
-# i3 config file (v4)
-#
-# Please see https://i3wm.org/docs/userguide.html for a complete reference!
-
 set $mod Mod1
-
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
+exec redshift -l 55.7:12.6 -t 2600:2600 -g 0.8 -m randr -v
+exec nitrogen --restore &
 font pango:monospace 8
 
-# Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # start a terminal
@@ -18,7 +12,9 @@ bindsym $mod+Return exec gnome-terminal --hide-menubar  --window-with-profile=No
 bindsym $mod+Shift+w kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run #-nb '#1e1e1e' -sf '#1e1e1e' -sb '#215D9C' -nf '#9f9f9f'
+bindsym $mod+d exec dmenu_run -nb '#000' -sf '#1e1e1e' -sb '#94ebeb' -nf '#fff'
+bindsym $mod+x exec sh ~/scripts/dmenu/utils.sh
+
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -140,16 +136,17 @@ for_window [class="^.*"] border pixel 1
 gaps inner 20
 gaps outer 5
 
-set $bg     #2c2c2e
-set $fg     #9f9f9f
-set $hi     #215D9C
-set $ac     #A0A0AF
-set $tx     #040404
-set $ia     #8f8f8f
-set $be     #215D9C
-set $yw     #215D9C
-set $gn     #215D9C
-set $rd     #215D9C
+#set $bg     #2c2c2e
+set $bg     #000000
+set $fg     #94ebeb
+set $hi     #94ebeb
+set $ac     #94ebeb
+set $tx     #94ebeb
+set $ia     #94ebeb
+set $be     #94ebeb
+set $yw     #94ebeb
+set $gn     #94ebeb
+set $rd     #94ebeb
 
 client.focused              $ac        $ac         $tx
 client.unfocused            $bg        $bg         $ia
@@ -170,6 +167,4 @@ bar {
     }
 }
 
-exec --no-startup-id compton --config ~/.config/compton.conf -b
-exec redshift -l 55.7:12.6 -t 2600:2600 -g 0.8 -m randr -v
 exec_always for id in $(xinput list | grep "pointer" | cut -d '=' -f 2 | cut -f 1); do xinput --set-prop $id 'libinput Accel Profile Enabled' 0, 1; done

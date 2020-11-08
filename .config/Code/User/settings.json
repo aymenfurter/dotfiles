@@ -1,0 +1,10 @@
+{
+    "vscode-neovim.neovimExecutablePaths.linux": "/home/mika/tools/neovim/nvim.appimage",
+    "workbench.colorCustomizations": {
+        "activityBar.background": "#000",
+        "button.background": "#000",
+        "statusBar.background": "#000"
+    },
+    "team.showWelcomeMessage": false,
+    "editor.semanticTokenColorCustomizations": null
+}
