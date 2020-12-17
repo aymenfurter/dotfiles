@@ -1,0 +1,11 @@
+<keymap version="1" name="i3-adapted" parent="Eclipse">
+  <action id="FindUsages">
+    <keyboard-shortcut first-keystroke="ctrl alt n" />
+  </action>
+  <action id="GotoImplementation">
+    <keyboard-shortcut first-keystroke="ctrl alt b" />
+  </action>
+  <action id="ShowIntentionActions">
+    <keyboard-shortcut first-keystroke="ctrl alt comma" />
+  </action>
+</keymap>
